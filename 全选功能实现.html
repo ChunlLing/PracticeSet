@@ -1,0 +1,284 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>全选功能实现</title>
+<script src="./jquery-2.2.1.min.js"></script>
+
+</head>
+
+<body>
+    <style>
+        p {
+            text-align:left;
+        }        
+        table {
+            width:100%;
+        }
+        table th, table td {
+            margin-right:20px;
+        }
+    </style>
+    <div>
+        <table>
+            <tr>
+                <th>点击的按钮</th>
+                <th>点击前的状态</th>
+                <th>点击后的状态</th>
+            </tr>
+            <tr>
+                <td>全选</td>
+                <td>
+                    <table>
+                        <tr>
+                            <p>当前为未全选的状态</p>
+                        </tr>
+                        <tr>
+                            <p>当前为全选状态</p>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <p>所有子项都选择</p>
+                        </tr>
+                        <tr>
+                            <p>全部取消选择</p>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>大列表子项</td>
+                <td>
+                    <table>
+                        <tr>
+                            <p>当前大列表子项的小列表子项为未全选的状态</p>
+                        </tr>
+                        <tr>
+                            <p>当前大列表子项的小列表子项为全选的状态</p>
+                        </tr>
+                        <tr>
+                            <p>当前所有大列表子项为未全选的状态</p>
+                        </tr>
+                        <tr>
+                            <p>当前所有大列表子项为全选的状态</p>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <p>所有子项都选择</p>
+                        </tr>
+                        <tr>
+                            <p>全部取消选择</p>
+                        </tr>
+                        <tr>
+                            <p>全选按钮被勾选</p>
+                        </tr>
+                        <tr>
+                            <p>全选按钮取消勾选</p>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>小列表子项</td>
+                <td>
+                    <table>
+                        <tr>
+                            <p>当前小列表子项为未全选的状态</p>
+                        </tr>
+                        <tr>
+                            <p>当前小列表子项为全选的状态</p>
+                        </tr>
+                        <tr>
+                            <p>当前所有大列表子项为未全选的状态</p>
+                        </tr>
+                        <tr>
+                            <p>当前所有大列表子项为全选的状态</p>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <p>所有子项都选择</p>
+                        </tr>
+                        <tr>
+                            <p>全部取消选择</p>
+                        </tr>
+                        <tr>
+                            <p>全选按钮被勾选</p>
+                        </tr>
+                        <tr>
+                            <p>全选按钮取消勾选</p>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="commodityColumn">
+        <div class="th-chk">
+            <div id="selectAll" class="selectAll">
+                <input type="checkbox" name="selectAllchckbox" id="selectAllChckbox" class="allSelected1" autocomplete="off" />
+                <label for="selectAllChckbox">全选</label>
+            </div>
+        </div>
+    </div>
+    <div class="commodityContainer">
+        <div class="mainCommodity">
+            <div class="shopInfo">
+                <div class="shopMsg">
+                    <input type="checkbox" name="shopMsg" class="shopMsg-input" autocomplete="off" />
+                    <span>大列表子项</span>
+                </div>
+            </div>
+            <div class="commodityInfo">
+                <ul>
+                    <li class="td-chk">
+                        <div class="td-inner">
+                            <input type="checkbox" name="checkbox" autocomplete="off">
+                            <span>小列表子项</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mainCommodity">
+            <div class="shopInfo">
+                <div class="shopMsg">
+                    <input type="checkbox" name="shopMsg" class="shopMsg-input" autocomplete="off" />
+                    <span>大列表子项</span>
+                </div>
+            </div>
+            <div class="commodityInfo">
+                <ul>
+                    <li class="td-chk">
+                        <div class="td-inner">
+                            <input type="checkbox" name="checkbox" autocomplete="off">
+                            <span>小列表子项</span>
+                        </div>
+                    </li>
+                    <li class="td-chk">
+                        <div class="td-inner">
+                            <input type="checkbox" name="checkbox" autocomplete="off">
+                            <span>小列表子项</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script>
+    //商品全选
+	$('.selectAll').on('click', '.allSelected1', function(event) {
+		if ($(this).prop('checked')) {
+			$(':checkbox').prop('checked',true);
+			$('.commodityInfo').css({
+				'background-color':'#FFF8E1'
+			});
+		} else {
+			$(':checkbox').prop('checked',false);
+			$('.commodityInfo').css({
+				'background-color':'#fcfcfc'
+			});
+		}
+	});
+    
+	//fixed中的全选按钮
+	$('.all-selected').on('click', '.allSelected2', function(event) {
+		if ($(this).prop('checked')) {
+			$(':checkbox').prop('checked',true);
+			$('.commodityInfo').css({
+				'background-color':'#FFF8E1'
+			});
+		} else {
+			$(':checkbox').prop('checked',false);
+			$('.commodityInfo').css({
+				'background-color':'#fcfcfc'
+			});
+		}
+	});
+
+	//取消全选
+	function cancelSelect(){
+		if ($('.td-inner input').length === $('.td-inner input:checked').length) {
+			$('.allSelected1').prop('checked',true);
+			$('.allSelected2').prop('checked',true);
+            console.log($('.allSelected1').prop('checked'));
+		} else {
+			$('.allSelected1').prop('checked',false);
+			$('.allSelected2').prop('checked',false);
+            console.log($('.allSelected1').prop('checked'));
+		}
+	}
+
+	//如果有商品未选中，则取消全选。
+	function cancelCalculator(){
+		if ($('.td-inner input:checked').length === 0) {
+            console.log('123');
+			$('#btn-sum').css({
+				'background-color':'#aaa',
+				'cursor':'not-allowed'
+			});
+			$('.submit-btn').css({
+				'background-color':'#aaa',
+				'cursor':'not-allowed'
+			});
+		} else {
+            console.log('456');
+			$('#btn-sum').css({
+				'background-color':'#f40',
+				'cursor':'pointer'
+			});
+			$('.submit-btn').css({
+				'background-color':'#f40',
+				'cursor':'pointer'
+			})
+		}
+	}
+
+
+	//点击某商品时选中
+	$('body').on('click','.td-inner input',function(event){
+		if ($(this).prop('checked')) {
+			$(this).parents('.commodityInfo').siblings('.shopInfo').find('input').prop('checked',true);
+			$(this).parents('.commodityInfo').css({
+				'background-color':'#fff8e1'
+			});
+		} else {
+			$(this).parents('.commodityInfo').siblings('.shopInfo').find('input').prop('checked',false);
+			$(this).parents('.commodityInfo').css({
+				'background-color':'#fcfcfc'
+			});
+		}
+		cancelCalculator();
+		cancelSelect();
+	});
+
+	//点击某商品时选中
+	$('body').on('click','.shopInfo input',function(event){
+		if ($(this).prop('checked')) {
+			$(this).parents('.shopInfo').siblings('.commodityInfo').find('.td-inner input').prop('checked',true);
+			$(this).parents('.shopInfo').siblings('.commodityInfo').css({
+				'background-color':'#fff8e1'
+			});
+		} else {
+			$(this).parents('.shopInfo').siblings('.commodityInfo').find('.td-inner input').prop('checked',false);
+			$(this).parents('.shopInfo').siblings('.commodityInfo').css({
+				'background-color':'#fcfcfc'
+			});
+		}
+		cancelCalculator();
+		cancelSelect();
+	});
+</script>
+</body>
+</html>
