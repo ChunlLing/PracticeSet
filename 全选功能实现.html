@@ -122,51 +122,44 @@
         </table>
     </div>
     
-    <div class="commodityColumn">
-        <div class="th-chk">
-            <div id="selectAll" class="selectAll">
-                <input type="checkbox" name="selectAllchckbox" id="selectAllChckbox" class="allSelected1" autocomplete="off" />
-                <label for="selectAllChckbox">全选</label>
-            </div>
-        </div>
+    <div id="selectAll" class="selectAll">
+        <input type="checkbox" class="allSelected1" />
+        <span>全选</span>
     </div>
-    <div class="commodityContainer">
-        <div class="mainCommodity">
-            <div class="shopInfo">
-                <div class="shopMsg">
-                    <input type="checkbox" name="shopMsg" class="shopMsg-input" autocomplete="off" />
-                    <span>大列表子项</span>
-                </div>
+    
+    <div class="selectContainer">
+        <div class="mainContainer">
+            <div class="bigItem">
+                <input type="checkbox" />
+                <span>大列表子项</span>
             </div>
-            <div class="commodityInfo">
+            <div class="smallItem">
                 <ul>
                     <li class="td-chk">
                         <div class="td-inner">
-                            <input type="checkbox" name="checkbox" autocomplete="off">
+                            <input type="checkbox" />
                             <span>小列表子项</span>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="mainCommodity">
-            <div class="shopInfo">
-                <div class="shopMsg">
-                    <input type="checkbox" name="shopMsg" class="shopMsg-input" autocomplete="off" />
-                    <span>大列表子项</span>
-                </div>
+        <div class="mainContainer">
+            <div class="bigItem">
+                <input type="checkbox" />
+                <span>大列表子项</span>
             </div>
-            <div class="commodityInfo">
+            <div class="smallItem">
                 <ul>
                     <li class="td-chk">
                         <div class="td-inner">
-                            <input type="checkbox" name="checkbox" autocomplete="off">
+                            <input type="checkbox" />
                             <span>小列表子项</span>
                         </div>
                     </li>
                     <li class="td-chk">
                         <div class="td-inner">
-                            <input type="checkbox" name="checkbox" autocomplete="off">
+                            <input type="checkbox" />
                             <span>小列表子项</span>
                         </div>
                     </li>
@@ -177,16 +170,16 @@
     
     
     <script>
-    //商品全选
+    //全选
 	$('.selectAll').on('click', '.allSelected1', function(event) {
 		if ($(this).prop('checked')) {
 			$(':checkbox').prop('checked',true);
-			$('.commodityInfo').css({
+			$('.smallItem').css({
 				'background-color':'#FFF8E1'
 			});
 		} else {
 			$(':checkbox').prop('checked',false);
-			$('.commodityInfo').css({
+			$('.smallItem').css({
 				'background-color':'#fcfcfc'
 			});
 		}
@@ -206,14 +199,22 @@
 	//点击小列表子项时选中
 	$('body').on('click','.td-inner input',function(event){
 		if ($(this).prop('checked')) {
-			$(this).parents('.commodityInfo').siblings('.shopInfo').find('input').prop('checked',true);
+			$(this).parents('.smallItem').siblings('.bigItem').find('input').prop('checked',true);
 			$(this).parents('.td-inner').css({
 				'background-color':'#fff8e1'
 			});
-                console.log('if' + $(this).parents('.commodityInfo').siblings('.shopInfo').find('input').prop('checked'));
+                console.log('if' + $(this).parents('.smallItem').siblings('.bigItem').find('input').prop('checked'));
 		} else {
-            if (!$(this).siblings('input').prop('checked')) {
-			    $(this).parents('.commodityInfo').siblings('.shopInfo').find('input').prop('checked',false);
+            var flag = true;
+            //alert($(this).parents('.smallItem').find('.td-chk').length);
+            for (var i = 0; i < $(this).parents('.smallItem').find('.td-chk').length; i++) {
+                if ($(this).parents('.smallItem').find('input').eq(i).prop('checked')) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+			    $(this).parents('.smallItem').siblings('.bigItem').find('input').prop('checked',false);
             }
 			$(this).parents('.td-inner').css({
 				'background-color':'#fcfcfc'
@@ -223,15 +224,15 @@
 	});
 
 	//点击大列表子项时选中
-	$('body').on('click','.shopInfo input',function(event){
+	$('body').on('click','.bigItem input',function(event){
 		if ($(this).prop('checked')) {
-			$(this).parents('.shopInfo').siblings('.commodityInfo').find('.td-inner input').prop('checked',true);
-			$(this).parents('.shopInfo').siblings('.commodityInfo').css({
+			$(this).parents('.bigItem').siblings('.smallItem').find('.td-inner input').prop('checked',true);
+			$(this).parents('.bigItem').siblings('.smallItem').css({
 				'background-color':'#fff8e1'
 			});
 		} else {
-			$(this).parents('.shopInfo').siblings('.commodityInfo').find('.td-inner input').prop('checked',false);
-			$(this).parents('.shopInfo').siblings('.commodityInfo').css({
+			$(this).parents('.bigItem').siblings('.smallItem').find('.td-inner input').prop('checked',false);
+			$(this).parents('.bigItem').siblings('.smallItem').css({
 				'background-color':'#fcfcfc'
 			});
 		}
