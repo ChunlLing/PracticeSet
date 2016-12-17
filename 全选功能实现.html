@@ -191,79 +191,38 @@
 			});
 		}
 	});
-    
-	//fixed中的全选按钮
-	$('.all-selected').on('click', '.allSelected2', function(event) {
-		if ($(this).prop('checked')) {
-			$(':checkbox').prop('checked',true);
-			$('.commodityInfo').css({
-				'background-color':'#FFF8E1'
-			});
-		} else {
-			$(':checkbox').prop('checked',false);
-			$('.commodityInfo').css({
-				'background-color':'#fcfcfc'
-			});
-		}
-	});
 
 	//取消全选
 	function cancelSelect(){
 		if ($('.td-inner input').length === $('.td-inner input:checked').length) {
 			$('.allSelected1').prop('checked',true);
 			$('.allSelected2').prop('checked',true);
-            console.log($('.allSelected1').prop('checked'));
 		} else {
 			$('.allSelected1').prop('checked',false);
 			$('.allSelected2').prop('checked',false);
-            console.log($('.allSelected1').prop('checked'));
 		}
 	}
 
-	//如果有商品未选中，则取消全选。
-	function cancelCalculator(){
-		if ($('.td-inner input:checked').length === 0) {
-            console.log('123');
-			$('#btn-sum').css({
-				'background-color':'#aaa',
-				'cursor':'not-allowed'
-			});
-			$('.submit-btn').css({
-				'background-color':'#aaa',
-				'cursor':'not-allowed'
-			});
-		} else {
-            console.log('456');
-			$('#btn-sum').css({
-				'background-color':'#f40',
-				'cursor':'pointer'
-			});
-			$('.submit-btn').css({
-				'background-color':'#f40',
-				'cursor':'pointer'
-			})
-		}
-	}
-
-
-	//点击某商品时选中
+	//点击小列表子项时选中
 	$('body').on('click','.td-inner input',function(event){
 		if ($(this).prop('checked')) {
 			$(this).parents('.commodityInfo').siblings('.shopInfo').find('input').prop('checked',true);
-			$(this).parents('.commodityInfo').css({
+			$(this).parents('.td-inner').css({
 				'background-color':'#fff8e1'
 			});
+                console.log('if' + $(this).parents('.commodityInfo').siblings('.shopInfo').find('input').prop('checked'));
 		} else {
-			$(this).parents('.commodityInfo').siblings('.shopInfo').find('input').prop('checked',false);
-			$(this).parents('.commodityInfo').css({
+            if (!$(this).siblings('input').prop('checked')) {
+			    $(this).parents('.commodityInfo').siblings('.shopInfo').find('input').prop('checked',false);
+            }
+			$(this).parents('.td-inner').css({
 				'background-color':'#fcfcfc'
 			});
 		}
-		cancelCalculator();
 		cancelSelect();
 	});
 
-	//点击某商品时选中
+	//点击大列表子项时选中
 	$('body').on('click','.shopInfo input',function(event){
 		if ($(this).prop('checked')) {
 			$(this).parents('.shopInfo').siblings('.commodityInfo').find('.td-inner input').prop('checked',true);
@@ -276,7 +235,6 @@
 				'background-color':'#fcfcfc'
 			});
 		}
-		cancelCalculator();
 		cancelSelect();
 	});
 </script>
