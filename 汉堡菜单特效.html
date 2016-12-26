@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>汉堡菜单特效</title>
+</head>
+
+<body>
+    <!-- 样式 -->
+    <style>
+        /* box最外层div样式 */
+        .hamburger {
+            position:relative;
+            width:100px;
+            height:100px;
+            background-color:#036;
+        }
+        /* box里层div样式 */
+        .hamburger .vertical_middle {
+            position:absolute;
+            top:32px;
+            width:100px;
+            cursor:pointer;
+        }
+        /* box里层div线条样式 */
+        .hamburger .vertical_middle .line {
+            display:block;
+            width:40px;
+            height:4px;
+            background-color:#EEE;
+            margin:6px auto;
+        }
+        /* 交叉，第二条线消失，第一三条线分别顺时针和逆时针旋转45度 */
+        .hamburger.change .vertical_middle .line:nth-child(2) {
+            opacity:0;
+        }
+        .hamburger.change .vertical_middle .line:nth-child(1) {
+            transform:translate(2px,10px) rotate(45deg);
+        }
+        .hamburger.change .vertical_middle .line:nth-child(3) {
+            transform:translate(2px,-10px) rotate(-45deg);
+        }
+        
+        
+    </style>
+    
+    <!-- 框架 -->
+    <!-- box -->
+    <div class="hamburger" id="hamburger_1">
+        <div class="vertical_middle">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- 鼠标滑过显示效果 -->
+    <script type="text/javascript" src="jquery-2.2.1.min.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.hamburger').hover(function () {
+                $(this).addClass('change');
+            }, function () {
+                $(this).removeClass('change');
+            });
+        });
+    </script>
+    
+    
+    
+</body>
+</html>
