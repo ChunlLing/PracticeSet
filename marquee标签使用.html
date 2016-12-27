@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>marquee标签</title>
+</head>
+
+<body>
+    <style>
+        .box {
+            width:100%;
+            border:1px solid #CCC;
+            margin:20px;
+        }
+    </style>
+    <div class="box">
+        <p>behavior属性对比：</p>
+        <marquee behavior=slide>
+        由一端滚动到另一端，不会重复
+        </marquee>
+        <marquee behavior=scroll>
+        由一端滚动到另一端，会重复
+        </marquee>
+        <marquee behavior=alternate>
+        在两端之间来回滚动
+        </marquee>
+    </div>
+    <div class="box">
+        <p>direction属性对比：</p>
+        <marquee direction=down>
+        向下滚动
+        </marquee>
+        <marquee direction=up>
+        向上滚动
+        </marquee>
+        <marquee direction=right>
+        向右滚动
+        </marquee>
+        <marquee direction=left>
+        向左滚动
+        </marquee>
+    </div>
+    <div class="box">
+        <p>loop属性：</p>
+        <marquee loop="-1">
+        无限循环
+        </marquee>
+        <marquee loop=2>
+        滚动次数为2
+        </marquee>
+    </div>
+    <div class="box">
+        <marquee width="150" bgcolor="#969696">
+        设定宽度
+        </marquee>
+        <marquee height="40" bgcolor="#969696">
+        设定高度
+        </marquee>
+        <marquee hspace="20" bgcolor="#969696">
+        设定距离父容器水平边框的距离
+        </marquee>
+        <marquee vspace="20" bgcolor="#969696">
+        设定距离父容器垂直边框的距离
+        </marquee>
+        <marquee scrollamount="10">
+        设定滚动速度（单位pixels）
+        </marquee>
+        <marquee scrolldelay="10">
+        设定滚动时间（单位ms）
+        </marquee>
+    </div>
+</body>
+</html>
