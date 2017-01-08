@@ -6,6 +6,7 @@
 </head>
 
 <body>
+	<h1>CSS3实现物体抛物线运动</h1>
     <div>
         <p>仅在Firefox浏览器测试</p>
     </div>
@@ -31,6 +32,7 @@
             padding:20px;
             margin:40px auto;
         }
+		/*  垂直方向的匀加速运动 */
         #method1 .box1 {
             -moz-animation-name:rotate-v;
             -moz-animation-duration:3s;
@@ -46,10 +48,12 @@
                 transform:translateY(330px);
             }
         }
+		/* 水平方向的匀速运动 */
         #method1 .box2 {
             width:50px;
             height:50px;
             background-color:#FF6;
+			/*border-radius: 50%;*/
             -moz-transform:rotate(-45deg);
             -moz-animation-name:rotation-h;
             -moz-animation-duration:3s;
