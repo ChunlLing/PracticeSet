@@ -160,6 +160,34 @@
 			}
 		}
 		
+		/* 模式九：交叉带圈 */
+		#hamburger_9.change div {
+			border: 5px solid white;
+			border-radius: 50px;
+		}
+		#hamburger_9.change div .line {
+			animation: scale 0.6s forwards;
+		}
+		#hamburger_9.change div .line:nth-child(2) {
+            opacity: 0;
+        }
+        #hamburger_9.change div .line:nth-child(1) {
+            transform: translateY(26px) rotate(45deg);
+        }
+        #hamburger_9.change div .line:nth-child(3) {
+            transform: translateY(-26px) rotate(-45deg);
+        }
+		@keyframes scale {
+			0% {
+				transform: scale(1);
+			}
+			50% {
+				transform: scale(0);
+			}
+			100% {
+				transform: scale(0.5);
+			}
+		}
         
     </style>
     
