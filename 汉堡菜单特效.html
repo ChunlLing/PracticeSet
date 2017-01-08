@@ -66,6 +66,16 @@
 			transform: translateY(-25px);
 			opacity: 0;
 		}
+		/* 正交叉，第二条线消失，第一条线旋转90度且平移，第三条线平移到第二条线的位置 */
+        #hamburger_3.change div .line:nth-child(2) {
+            opacity: 0;
+        }
+        #hamburger_3.change div .line:nth-child(1) {
+            transform: translate(3px, 25px) rotate(90deg);
+        }
+        #hamburger_3.change div .line:nth-child(3) {
+            transform: translate(0px, -25px);
+        }
         
     </style>
     
@@ -90,6 +100,18 @@
 			<div class="col">
 				<!-- box -->
 				<div class="hamburger" id="hamburger_2">
+					<div class="vertical_middle">
+						<span class="line"></span>
+						<span class="line"></span>
+						<span class="line"></span>
+					</div>
+				</div>
+			</div>
+   			<!-- 单元格 -->
+			<!-- 第二条线消失，第一三条线正交叉 -->
+			<div class="col">
+				<!-- box -->
+				<div class="hamburger" id="hamburger_3">
 					<div class="vertical_middle">
 						<span class="line"></span>
 						<span class="line"></span>
