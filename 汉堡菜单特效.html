@@ -47,7 +47,7 @@
 		.hamburger .vertical_middle .line:nth-child(2) {
 			margin: 20px auto;
 		}
-        /* 斜交叉，第二条线消失，第一三条线分别顺时针和逆时针旋转45度形成交叉 */
+        /* 模式一：斜交叉，第二条线消失，第一三条线分别顺时针和逆时针旋转45度形成交叉 */
         #hamburger_1.change div .line:nth-child(2) {
             opacity: 0;
         }
@@ -57,7 +57,7 @@
         #hamburger_1.change div .line:nth-child(3) {
             transform: translateY(-26px) rotate(-45deg);
         }
-		/* 合并，第一三条线合并到第二条线上 */
+		/* 模式二：合并，第一三条线合并到第二条线上 */
 		#hamburger_2.change div .line:nth-child(1) {
 			transform: translateY(25px);
 			opacity: 0;
@@ -66,7 +66,7 @@
 			transform: translateY(-25px);
 			opacity: 0;
 		}
-		/* 正交叉，第二条线消失，第一条线旋转90度且平移，第三条线平移到第二条线的位置 */
+		/* 模式三：正交叉，第二条线消失，第一条线旋转90度且平移，第三条线平移到第二条线的位置 */
         #hamburger_3.change div .line:nth-child(2) {
             opacity: 0;
         }
@@ -75,6 +75,20 @@
         }
         #hamburger_3.change div .line:nth-child(3) {
             transform: translate(0px, -25px);
+        }
+		/* 模式四：正交叉，第二条线消失，第一条线旋转90度且平移，第三条线平移到第二条线的位置，最后所有内容旋转45度 */
+        #hamburger_4.change div .line:nth-child(2) {
+            opacity: 0;
+        }
+        #hamburger_4.change div .line:nth-child(1) {
+            transform: translate(3px, 25px) rotate(90deg);
+        }
+        #hamburger_4.change div .line:nth-child(3) {
+            transform: translate(0px, -25px);
+        }
+		#hamburger_4.change div {
+            transform: rotate(45deg);
+			transition: all 0.3s ease-in-out 0.3s;
         }
         
     </style>
@@ -112,6 +126,18 @@
 			<div class="col">
 				<!-- box -->
 				<div class="hamburger" id="hamburger_3">
+					<div class="vertical_middle">
+						<span class="line"></span>
+						<span class="line"></span>
+						<span class="line"></span>
+					</div>
+				</div>
+			</div>
+   			<!-- 单元格 -->
+			<!-- 第二条线消失，第一三条线正交叉再旋转 -->
+			<div class="col">
+				<!-- box -->
+				<div class="hamburger" id="hamburger_4">
 					<div class="vertical_middle">
 						<span class="line"></span>
 						<span class="line"></span>
