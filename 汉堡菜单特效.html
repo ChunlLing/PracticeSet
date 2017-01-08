@@ -137,6 +137,29 @@
 		#hamburger_7.change div .line:nth-child(3) {
 			transform: translateX(12px) rotate(-45deg);
 		}
+		
+		/* 模式八：缩放交叉 */
+		#hamburger_8.change div .line:nth-child(2) {
+            opacity: 0;
+        }
+        #hamburger_8.change div .line:nth-child(1) {
+            transform: translateY(26px) rotate(45deg);
+        }
+        #hamburger_8.change div .line:nth-child(3) {
+            transform: translateY(-26px) rotate(-45deg);
+        }
+		#hamburger_8.change div {
+			animation: scale 0.6s;
+		}
+		@keyframes scale {
+			0%, 100% {
+				transform: scale(1);
+			}
+			50% {
+				transform: scale(0);
+			}
+		}
+		
         
     </style>
     
@@ -236,7 +259,7 @@
 				</div>
 			</div>
    			<!-- 单元格 -->
-			<!-- 模式八： -->
+			<!-- 模式八：缩放交叉 -->
 			<div class="col">
 				<!-- box -->
 				<div class="hamburger" id="hamburger_8">
@@ -248,7 +271,7 @@
 				</div>
 			</div>
    			<!-- 单元格 -->
-			<!-- 模式九： -->
+			<!-- 模式九：交叉带圈 -->
 			<div class="col">
 				<!-- box -->
 				<div class="hamburger" id="hamburger_9">
