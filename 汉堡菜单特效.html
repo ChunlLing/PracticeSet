@@ -188,6 +188,16 @@
 				transform: scale(0.5);
 			}
 		}
+		
+		/* 模式十：第一三条线左右飞出 */
+		#hamburger_10.change div .line:nth-child(1) {
+			transform: translateX(-50%);
+			opacity: 0;
+		}
+		#hamburger_10.change div .line:nth-child(3) {
+			transform: translateX(50%);
+			opacity: 0;
+		}
         
     </style>
     
@@ -311,7 +321,7 @@
 				</div>
 			</div>
    			<!-- 单元格 -->
-			<!-- 模式十： -->
+			<!-- 模式十： 第一三条线左右飞出 -->
 			<div class="col">
 				<!-- box -->
 				<div class="hamburger" id="hamburger_10">
