@@ -1,0 +1,190 @@
+body {
+	background-color: darkcyan;
+}
+
+/* 框架样式*/
+#frame {
+	display: table;
+	width: 900px;
+	margin: 10px auto;
+}
+
+/* 行 */
+.row {
+	display: table-row;
+}
+
+/* 单元格 */
+.col {
+	display: table-cell;
+	padding: 10px;
+}
+
+/* box最外层div样式 */
+.hamburger {
+    position: relative;
+    width: 200px;
+    height: 200px;
+	line-height: 200px;
+	text-align: center;
+    background-color: #036;
+}
+
+/* box里层div样式 */
+.hamburger .vertical_middle {
+    cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+}
+
+/* box里层div线条样式 */
+.hamburger .vertical_middle .line {
+    display: block;
+    width: 80px;
+    height: 6px;
+    background-color: #EEE;
+	transition: all 0.3s ease-in-out;
+}
+.hamburger .vertical_middle .line:nth-child(2) {
+	margin: 20px 0px;
+}
+
+/* 模式一：斜交叉，第二条线消失，第一三条线分别顺时针和逆时针旋转45度形成交叉 */
+#hamburger_1.change div .line:nth-child(2) {
+    opacity: 0;
+}
+#hamburger_1.change div .line:nth-child(1) {
+    transform: translateY(26px) rotate(45deg);
+}
+#hamburger_1.change div .line:nth-child(3) {
+    transform: translateY(-26px) rotate(-45deg);
+}
+
+/* 模式二：合并，第一三条线合并到第二条线上 */
+#hamburger_2.change div .line:nth-child(1) {
+	transform: translateY(25px);
+	opacity: 0;
+}
+#hamburger_2.change div .line:nth-child(3) {
+	transform: translateY(-25px);
+	opacity: 0;
+}
+
+/* 模式三：正交叉，第二条线消失，第一条线旋转90度且平移，第三条线平移到第二条线的位置 */
+#hamburger_3.change div .line:nth-child(2) {
+    opacity: 0;
+}
+#hamburger_3.change div .line:nth-child(1) {
+    transform: translate(3px, 25px) rotate(90deg);
+}
+#hamburger_3.change div .line:nth-child(3) {
+    transform: translate(0px, -25px);
+}
+
+/* 模式四：正交叉，第二条线消失，第一条线旋转90度且平移，第三条线平移到第二条线的位置，最后所有内容旋转45度 */
+#hamburger_4.change div .line:nth-child(2) {
+    opacity: 0;
+}
+#hamburger_4.change div .line:nth-child(1) {
+    transform: translate(3px, 25px) rotate(90deg);
+}
+#hamburger_4.change div .line:nth-child(3) {
+    transform: translate(0px, -25px);
+}
+#hamburger_4.change div {
+    transform: rotate(45deg);
+	transition: all 0.3s ease-in-out 0.3s;
+}
+
+/* 模式五：斜切，第一二条线变短，三条线向下旋转 */
+#hamburger_5.change div .line:nth-child(1) {
+	width: 40px;
+}
+#hamburger_5.change div .line:nth-child(2) {
+	width: 60px;
+}
+#hamburger_5.change div {
+	transition: all 0.3s ease-in 0.3s;
+	transform: rotate(30deg);
+}
+
+/* 模式六：无轴 箭头，第二条线消失，第 一三条线一端相交 */
+#hamburger_6.change div .line:nth-child(2) {
+	opacity: 0;
+}
+#hamburger_6.change div .line:nth-child(1) {
+	transform: rotate(45deg);
+}
+#hamburger_6.change div .line:nth-child(3) {
+	transform:  rotate(-45deg);
+}
+
+/* 模式七：有轴箭头，第一三条线一端相交 */
+#hamburger_7.change div .line:nth-child(1) {
+	transform: translateX(12px) rotate(45deg);
+}
+#hamburger_7.change div .line:nth-child(3) {
+	transform: translateX(12px) rotate(-45deg);
+}
+
+/* 模式八：缩放交叉 */
+#hamburger_8.change div .line:nth-child(2) {
+    opacity: 0;
+}
+#hamburger_8.change div .line:nth-child(1) {
+    transform: translateY(26px) rotate(45deg);
+}
+#hamburger_8.change div .line:nth-child(3) {
+    transform: translateY(-26px) rotate(-45deg);
+}
+#hamburger_8.change div {
+	animation: scale 0.6s;
+}
+@keyframes scale {
+	0%, 100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0);
+	}
+}
+
+/* 模式九：交叉带圈 */
+#hamburger_9.change div {
+	border: 5px solid white;
+	border-radius: 50px;
+}
+#hamburger_9.change div .line {
+	animation: scale 0.6s forwards;
+}
+#hamburger_9.change div .line:nth-child(2) {
+    opacity: 0;
+}
+#hamburger_9.change div .line:nth-child(1) {
+    transform: translateY(26px) rotate(45deg);
+}
+#hamburger_9.change div .line:nth-child(3) {
+    transform: translateY(-26px) rotate(-45deg);
+}
+@keyframes scale {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(0.5);
+	}
+}
+
+/* 模式十：第一三条线左右飞出 */
+#hamburger_10.change div .line:nth-child(1) {
+	transform: translateX(-50%);
+	opacity: 0;
+}
+#hamburger_10.change div .line:nth-child(3) {
+	transform: translateX(50%);
+	opacity: 0;
+}
