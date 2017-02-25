@@ -1,0 +1,34 @@
+#emailInput {
+	width: 100%;
+	height: 26px;
+	line-height: 26px;
+	font-size: 14px;
+	color: #333;
+	text-indent: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#emailTip {
+	margin-top: 5px;
+	padding: 0px;
+	list-style: none;
+	color: #444;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#emailTip li {
+	margin: 5px 0px;
+	padding-left: 15px;
+	height: 24px;
+	line-height: 24px;
+	font-size: 14px;
+}
+
+
+.highlight {
+	color: #369;
+	background-color: #eee;
+}
