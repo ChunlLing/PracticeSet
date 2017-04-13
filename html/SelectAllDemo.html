@@ -11,239 +11,137 @@
 
 <body>
     <style>
+        .container {
+            margin: 5px auto;
+        }
+        ul {
+            list-style: none;
+        }
         p {
+            margin: 0px;
+            line-height: 1;
             text-align:left;
         }        
         table {
-            width:100%;
+            width:80%;
+            margin: 5px auto;
         }
         table th, table td {
             margin-right:20px;
         }
     </style>
-	<h1>
-		全选功能实现
-	</h1>
+
+    <div class="container">
+    
+        <h1>
+            全选功能实现
+        </h1>
+
+        <div id="selectAll" class="selectAll">
+            <input type="checkbox" class="allSelected1" />
+            <span>全选</span>
+        </div>
+        
+        <div class="selectContainer">
+            <div class="mainContainer">
+                <div class="bigItem">
+                    <input type="checkbox" />
+                    <span>大列表子项</span>
+                </div>
+                <div class="smallItem">
+                    <ul>
+                        <li class="td-chk">
+                            <div class="td-inner">
+                                <input type="checkbox" />
+                                <span>小列表子项</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mainContainer">
+                <div class="bigItem">
+                    <input type="checkbox" />
+                    <span>大列表子项</span>
+                </div>
+                <div class="smallItem">
+                    <ul>
+                        <li class="td-chk">
+                            <div class="td-inner">
+                                <input type="checkbox" />
+                                <span>小列表子项</span>
+                            </div>
+                        </li>
+                        <li class="td-chk">
+                            <div class="td-inner">
+                                <input type="checkbox" />
+                                <span>小列表子项</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <div>
-        <table>
-            <tr>
-                <th>点击的按钮</th>
-                <th>点击前的状态</th>
-                <th>点击后的状态</th>
-            </tr>
-            <tr>
-                <td>全选</td>
-                <td>
-                    <table>
-                        <tr>
+        <table border="1" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>点击的按钮</th>
+                    <th>点击前的状态</th>
+                    <th>点击后的状态</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>全选</td>
+                    <td>
                             <p>当前为未全选的状态</p>
-                        </tr>
-                        <tr>
                             <p>当前为全选状态</p>
-                        </tr>
-                    </table>
-                </td>
-                <td>
-                    <table>
-                        <tr>
+                    </td>
+                    <td>
                             <p>所有子项都选择</p>
-                        </tr>
-                        <tr>
                             <p>全部取消选择</p>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>大列表子项</td>
-                <td>
-                    <table>
-                        <tr>
+                    </td>
+                </tr>
+                <tr>
+                    <td>大列表子项</td>
+                    <td>
                             <p>当前大列表子项的小列表子项为未全选的状态</p>
-                        </tr>
-                        <tr>
                             <p>当前大列表子项的小列表子项为全选的状态</p>
-                        </tr>
-                        <tr>
                             <p>当前所有大列表子项为未全选的状态</p>
-                        </tr>
-                        <tr>
                             <p>当前所有大列表子项为全选的状态</p>
-                        </tr>
-                    </table>
-                </td>
-                <td>
-                    <table>
-                        <tr>
+                    </td>
+                    <td>
                             <p>所有子项都选择</p>
-                        </tr>
-                        <tr>
                             <p>全部取消选择</p>
-                        </tr>
-                        <tr>
                             <p>全选按钮被勾选</p>
-                        </tr>
-                        <tr>
                             <p>全选按钮取消勾选</p>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>小列表子项</td>
-                <td>
-                    <table>
-                        <tr>
+                    </td>
+                </tr>
+                <tr>
+                    <td>小列表子项</td>
+                    <td>
                             <p>当前小列表子项为未全选的状态</p>
-                        </tr>
-                        <tr>
                             <p>当前小列表子项为全选的状态</p>
-                        </tr>
-                        <tr>
                             <p>当前所有大列表子项为未全选的状态</p>
-                        </tr>
-                        <tr>
                             <p>当前所有大列表子项为全选的状态</p>
-                        </tr>
-                    </table>
-                </td>
-                <td>
-                    <table>
-                        <tr>
+                    </td>
+                    <td>
                             <p>所有子项都选择</p>
-                        </tr>
-                        <tr>
                             <p>全部取消选择</p>
-                        </tr>
-                        <tr>
                             <p>全选按钮被勾选</p>
-                        </tr>
-                        <tr>
                             <p>全选按钮取消勾选</p>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
     
-    <div id="selectAll" class="selectAll">
-        <input type="checkbox" class="allSelected1" />
-        <span>全选</span>
-    </div>
-    
-    <div class="selectContainer">
-        <div class="mainContainer">
-            <div class="bigItem">
-                <input type="checkbox" />
-                <span>大列表子项</span>
-            </div>
-            <div class="smallItem">
-                <ul>
-                    <li class="td-chk">
-                        <div class="td-inner">
-                            <input type="checkbox" />
-                            <span>小列表子项</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="mainContainer">
-            <div class="bigItem">
-                <input type="checkbox" />
-                <span>大列表子项</span>
-            </div>
-            <div class="smallItem">
-                <ul>
-                    <li class="td-chk">
-                        <div class="td-inner">
-                            <input type="checkbox" />
-                            <span>小列表子项</span>
-                        </div>
-                    </li>
-                    <li class="td-chk">
-                        <div class="td-inner">
-                            <input type="checkbox" />
-                            <span>小列表子项</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
     
     <a href="../index.html" class="btn btn-default">点击返回主页查看其它demo</a>
     
-    <script>
-    /*//全选
-	$('.selectAll').on('click', '.allSelected1', function(event) {
-		if ($(this).prop('checked')) {
-			$(':checkbox').prop('checked',true);
-			$('.smallItem').css({
-				'background-color':'#FFF8E1'
-			});
-		} else {
-			$(':checkbox').prop('checked',false);
-			$('.smallItem').css({
-				'background-color':'#fcfcfc'
-			});
-		}
-	});
-
-	//取消全选
-	function cancelSelect(){
-		if ($('.td-inner input').length === $('.td-inner input:checked').length) {
-			$('.allSelected1').prop('checked',true);
-			$('.allSelected2').prop('checked',true);
-		} else {
-			$('.allSelected1').prop('checked',false);
-			$('.allSelected2').prop('checked',false);
-		}
-	}
-
-	//点击小列表子项时选中
-	$('body').on('click','.td-inner input',function(event){
-		if ($(this).prop('checked')) {
-			$(this).parents('.smallItem').siblings('.bigItem').find('input').prop('checked',true);
-			$(this).parents('.td-inner').css({
-				'background-color':'#fff8e1'
-			});
-                console.log('if' + $(this).parents('.smallItem').siblings('.bigItem').find('input').prop('checked'));
-		} else {
-            var flag = true;
-            //alert($(this).parents('.smallItem').find('.td-chk').length);
-            for (var i = 0; i < $(this).parents('.smallItem').find('.td-chk').length; i++) {
-                if ($(this).parents('.smallItem').find('input').eq(i).prop('checked')) {
-                    flag = false;
-                    break;
-                }
-            }
-            if (flag) {
-			    $(this).parents('.smallItem').siblings('.bigItem').find('input').prop('checked',false);
-            }
-			$(this).parents('.td-inner').css({
-				'background-color':'#fcfcfc'
-			});
-		}
-		cancelSelect();
-	});
-
-	//点击大列表子项时选中
-	$('body').on('click','.bigItem input',function(event){
-		if ($(this).prop('checked')) {
-			$(this).parents('.bigItem').siblings('.smallItem').find('.td-inner input').prop('checked',true);
-			$(this).parents('.bigItem').siblings('.smallItem').css({
-				'background-color':'#fff8e1'
-			});
-		} else {
-			$(this).parents('.bigItem').siblings('.smallItem').find('.td-inner input').prop('checked',false);
-			$(this).parents('.bigItem').siblings('.smallItem').css({
-				'background-color':'#fcfcfc'
-			});
-		}
-		cancelSelect();
-	});*/
-</script>
 </body>
 </html>

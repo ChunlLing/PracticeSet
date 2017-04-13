@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>简单实现倒计时</title>
+</head>
+<body>
+	<p>倒计时：<span id="demo1"></span></p>
+	<p>倒计时：<span id="demo2"></span></p>
+	<p>当前时间：<span id="demo3"></span></p>
+	<a href="../index.html" class="btn btn-default">点击返回主页查看其它demo</a>
+	<script type="text/javascript">
+		var endTime = new Date('2017,12,31,23:59:59');		// 设置终止时间
+
+		showTime1();
+		showTime2();
+		showTime3();
+
+		function showTime1() {
+			var nowTime = new Date();						// 获取当前时间
+
+			document.querySelector('#demo1').innerText
+				= parseInt((endTime - nowTime)/(1000*60*60*24)) + '天'
+				+ parseInt((endTime - nowTime)/(1000*60*60)%24) + '时'
+				+ parseInt((endTime - nowTime)/(1000*60)%60) + '分'
+				+ parseInt((endTime - nowTime)/1000%60) + '秒';
+
+			setInterval(showTime1, 1000);
+		}
+
+		function showTime2() {
+			var nowTime = new Date();						// 获取当前时间
+
+			document.querySelector('#demo2').innerText
+				= Math.ceil((endTime - nowTime)/(1000*60*60*24)) + '天';
+
+			setInterval(showTime2, 1000);
+		}
+
+		function showTime3() {
+			var nowTime = new Date(),						// 获取当前时间
+				year = nowTime.getFullYear(),				// 获取年
+				month = nowTime.getMonth() + 1,				// 获取月
+				day = nowTime.getDate(),					// 获取日
+				week = nowTime.getDay(),					// 获取星期
+				hour = nowTime.getHours(),					// 获取时
+				minute = nowTime.getMinutes(),				// 获取分
+				second = nowTime.getSeconds();				// 获取秒
+			var weekend = new Array(7);
+			weekend[0] = '星期日';
+			weekend[1] = '星期一';
+			weekend[2] = '星期二';
+			weekend[3] = '星期三';
+			weekend[4] = '星期四';
+			weekend[5] = '星期五';
+			weekend[6] = '星期六';
+			document.querySelector('#demo3').innerText
+				= year + '年' + month + '月' + day + '日' + weekend[week] + hour + '时' + formatTime(minute) + '分' + formatTime(second) + '秒';
+
+			setInterval(showTime3, 1000);
+		}
+
+		function formatTime(time) {
+			if (time < 10) {
+				time = '0' + time;
+			}
+			return time;
+		}
+
+		/*
+			endTime - nowTime的结果是两个时间的毫秒差
+			1年 = 365天（非闰年）、366天（闰年）
+			1天 = 24小时
+			1小时 = 60分钟
+			1分钟 = 60秒
+			1秒 = 1000毫秒
+		*/
+	</script>
+</body>
+</html>
