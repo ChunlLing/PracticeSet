@@ -1,0 +1,54 @@
+body, p, h1, h2, h3, h4, h5, h6, dl, dd, dt, ul, ol, li {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-size: 14px;
+	color: #333;
+	width: 900px;
+	margin: 10px auto;
+	position: relative;
+	background-color: #fff;
+}
+
+ul {
+	list-style: none;
+}
+
+header {
+	width: 900px;
+	height: 200px;
+	background: url(../images/logo.jpg) no-repeat 30px 30px;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+header ul {
+	margin-top: 160px;
+	margin-left: auto;
+	width: 430px;
+}
+
+header ul li {
+	float: left;
+	width: 70px;
+	height: 30px;
+}
+
+header ul li a {
+	color: #333;
+	text-decoration: none;
+}
+
+footer {
+	width: 900px;
+	height: 60px;
+	clear: both;
+	border-top: 1px solid #999;
+}
+
+footer p {
+	text-align: center;
+	padding-top: 10px;
+}

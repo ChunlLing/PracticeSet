@@ -1,0 +1,41 @@
+#sidebar {
+	width: 300px;
+	height: 600px;
+	float: left;
+	margin-bottom: 10px;
+}
+
+#sidebar h1 {
+	background-color: #ccc;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	text-indent: 10px;
+}
+
+#sidebar div {
+	border: 1px solid #ccc;
+	border-top: none;
+	height: 250px;
+}
+
+#content {
+	width: 580px;
+	height: 600px;
+	float: right;
+	margin-bottom: 10px;
+}
+
+#content h1 {
+	background-color: #ccc;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	text-indent: 10px;
+}
+
+#content div {
+	border: 1px solid #ccc;
+	border-top: none;
+	height: 550px;
+}
