@@ -23,8 +23,6 @@
 		</div>
 	</div>
 
-	<footer>
-		<p>友情链接 | 关于我们 | 版权声明 | 广告赞助 | 招贤纳士</p>
-	</footer>
+	<!-- #include file = "footer.asp" -->
 </body>
 </html>
