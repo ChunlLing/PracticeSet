@@ -58,10 +58,8 @@
 }
 
 #reg div dl dd input.submit {
-	width: 60px;
 	height: 25px;
 	border: 1px dashed #999;
 	background-color: #fff;
 	cursor: pointer;
-	margin-left: 70px;
 }
