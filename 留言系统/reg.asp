@@ -5,13 +5,14 @@
 	<title>留言系统</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/reg.css">
+	<script type="text/javascript" src="js/reg.js"></script>
 </head>
 <body>
 	<!-- #include file = "header.asp" -->
 
 	<div id="reg">
 		<h1>会员注册</h1>
-		<form name="reg" method="post">
+		<form name="reg" method="post" action="reg_do.asp">
 			<div>
 				<dl>
 					<dt>以下均为必填项</dt>
@@ -48,10 +49,10 @@
 						<label class="text">Q Q</label>：<input type="text" name="qq" class="text" />
 					</dd>
 					<dd>
-						<label class="text">验证码</label>：<input type="text" name="yzm" class="text yzm" /><img src="code.asp" alt="验证码">
+						<label class="text">验证码</label>：<input type="text" name="yzm" class="text yzm" /><img src="code.asp" onclick="javascript:this.src = 'code.asp?yzm=' + Math.random()" style="cursor: pointer;" alt="验证码">
 					</dd>
 					<dd>
-						<input type="submit" value="注册会员" class="submit" />
+						<input type="submit" value="注册会员" onclick="return check();" class="submit" />
 					</dd>
 				</dl>
 			</div>
