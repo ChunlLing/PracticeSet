@@ -1,6 +1,7 @@
 <meta charset="utf-8">
+<!-- #include file="conn.asp"-->
 <%
-	dim yzm, username, password, notpassword, passt, passd, qq, email, url
+	dim sql, yzm, username, password, notpassword, passt, passd, qq, email, url, sex, face
 
 	yzm = trim(request.form("yzm"))
 	username = trim(request.form("username"))
@@ -11,6 +12,8 @@
 	email = trim(request.form("email"))
 	url = trim(request.form("url"))
 	qq = trim(request.form("qq"))
+	sex = trim(request.form("sex"))
+	face = trim(request.form("face"))
 
 	'用户名验证'
 	if username = "" or len(username) < 2 then
@@ -90,4 +93,12 @@
 		response.write "<script>alert('验证码错误！');history.back();</script>"
 		response.end
 	end if
+
+	sql = "insert into G_User(G_UserName, G_PassWord, G_PassT, G_PassD, G_Face, G_Sex, G_QQ, G_Email, G_Url, G_Date) values ('" & username &"','" & password & "','" & passt & "', '" & passd & "', '" & face & "', '" & sex & "', '" & qq & "', '" & email & "', '" & url & "', now())"
+	conn.execute(sql)
+
+	call close_conn
+
+	response.write "<script>alert('会员注册成功');location.href='index.asp';</script>"
+
 %>

@@ -33,8 +33,8 @@
 					</dd>
 					<dd>
 						<label class="text">性别</label>：
-						<input type="radio" name="sex" value="男" />男
-						<input type="radio" name="sex" value="女" checked="checked" />女
+						<input type="radio" name="sex" value="男" /> 男
+						<input type="radio" name="sex" value="女" checked="checked" /> 女
 					</dd>
 					<dd>
 						<label class="text">头像</label>：<input type="hidden" name="face" value="face/m01.gif" /><a href="#" onclick="javascript:window.open('face.asp', 'face', 'width=400, height=400, scrollbars=1')"><img src="face/m01.gif" id="faceimg" class="face" alt="头像1"></a>
