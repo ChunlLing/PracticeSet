@@ -16,6 +16,14 @@ ul {
 	list-style: none;
 }
 
+img {
+	border: none;
+}
+
+input {
+	outline: none;
+}
+
 header {
 	width: 900px;
 	height: 200px;

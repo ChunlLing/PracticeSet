@@ -1,0 +1,19 @@
+#face h1 {
+	font-size: 14px;
+	text-align: center;
+	width: 90%;
+	margin: 10px auto;
+	line-height: 30px;
+	border: 1px dashed #ccc;
+}
+
+#face dl {
+	padding-left: 20px;
+	width: 100px;
+	height: 100px;
+	float: left;
+}
+
+#face dl dd img {
+	cursor: pointer;
+}
