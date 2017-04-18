@@ -1,0 +1,178 @@
+body, p, h1, h2, h3, ul, ol ,li {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	min-width: 595px;
+	max-width: 1366px;
+	background-image: url(images/bg.jpg);
+	background-size: 100%;
+	background-position: right bottom;
+	background-repeat: no-repeat;
+}
+ul, ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+
+.container {
+	width: 595px;
+	height: 842px;
+	margin: 20px auto;
+	padding: 50px 30px;
+	background-color: #fff;
+}
+.text {
+	color: #333;
+	font-size: 16px;
+}
+.btn {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	background-color: #fff;
+	cursor: pointer;
+}
+.btn:hover {
+	border-color: rgb(15,101,121);
+	box-shadow: 0px 0px 10px rgba(15,101,121,.5); 
+}
+
+.info {
+	overflow: hidden;
+}
+.info ul {
+	float: left;
+	width: 500px;
+}
+.info ul li {
+	float: left;
+	width: 250px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 10px;
+}
+.info ul li::before {
+	content: "";
+	display: block;
+	float: left;
+	width: 30px;
+	height: 30px;
+	margin-right: 20px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.info ul li.username::before {
+	background-image: url(images/name2.png);
+}
+.info ul li.age::before {
+	background-image: url(images/birthday2.png);
+}
+.info ul li.origin::before {
+	background-image: url(images/where2.png);
+}
+.info ul li.education::before {
+	background-image: url(images/school2.png);
+}
+.info ul li.mobile::before {
+	background-image: url(images/mobile2.png);
+}
+.info ul li.email::before {
+	background-image: url(images/email2.png);
+}
+.info img {
+	width: 80px;
+	float: right;
+}
+
+.intension {
+	clear: both;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	margin: 10px auto;
+	border-top: 2px solid rgb(91,155,213);
+	border-bottom: 2px solid rgb(91,155,213);
+	text-indent: 50px;
+}
+
+.content {
+}
+.content li.item {
+	margin-left: 50px;
+}
+.content li.item::before {
+	content: "●";
+	display: block;
+	height: 40px;
+	line-height: 50px;
+	float: left;
+	margin-left: -50px;
+	color: rgb(15,101,121);
+	font-size: 24px;
+}
+.content li.item h1 {
+	height: 40px;
+	line-height: 50px;
+	font-size: 18px;
+	font-weight: normal;
+}
+.content li.item>div>p {
+	position: relative;
+	line-height: 30px;
+	text-indent: 32px;
+	font-size: 14px;
+}
+.content li.item a {
+	color: #333;
+}
+.content li.item a:hover {
+	color: rgb(222,19,21);
+}
+.content li.experience a {
+	font-weight: bold;
+	color: rgb(15,101,121);
+}
+#my-resume.content li.skill p::before {
+	content: "★";
+	display: block;
+	float: left;
+	position: absolute;
+	left: 20px;
+	margin-left: -50px;
+	color: rgb(15,101,121);
+}
+.other {
+	position: fixed;
+	top: 50%;
+	right: 5%;
+}
+
+.diy p {
+	line-height: 1.8em;
+}
+.diy input, .diy textarea {
+	width: 400px;
+	margin: 10px auto;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	vertical-align: middle;
+}
+.diy input {
+	height: 1.8em;
+}
+.diy textarea {
+	height: 5em;
+	resize: none;
+}
+.diy label {
+	display: inline-block;
+	width: 150px;
+	text-align: right;
+}
+.diy input[type="file"] {
+	width: 200px;
+	border: none;
+}
