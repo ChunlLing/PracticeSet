@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>database</title>
+	<script type="text/javascript" src="../lib/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../js/HTML5Database.js"></script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>用户名：</td>
+			<td><input type="text" name="txtName" id="txtName" required="required" /></td>
+		</tr>
+		<tr>
+			<td>标题：</td>
+			<td><input type="text" name="txtTitle" id="txtTitle" /></td>
+		</tr>
+		<tr>
+			<td>留言：</td>
+			<td><input type="text" name="txtWords" id="txtWords" /></td>
+		</tr>
+	</table>
+	<input type="button" value="save" id="btnSave" />
+	<input type="button" value="clear" id="btnClear" />
+	<table id="tblData">
+	</table>
+	<a href="../index.html" class="btn btn-default">点击返回主页查看其它demo</a>
+</body>
+</html>
