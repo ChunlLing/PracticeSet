@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ShoppingCartDemo</title>
+	<link rel="stylesheet" type="text/css" href="../css/ShoppingCartDemo.css">
+	<script type="text/javascript" src="../js/ShoppingCartDemo.js"></script>
+</head>
+<body>
+	<table class="container" id="cartTable">
+		<thead>
+			<tr>
+				<th><label><input type="checkbox" class="check-all check">全选</label></th>
+				<th>商品</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="checkbox"><input type="checkbox" class="check-one check" /></td>
+				<td class="goods"><img src="../images/ShoppingCartDemo/haitaimibing.jpg" alt="" /><span>旺旺厚烧海苔米饼168g*4包休闲零食非油炸米果</span></td>
+				<td class="price">35.60</td>
+				<td class="count"><span class="reduce"></span><input type="text" value="1" class="count-input" /><span class="add">+</span></td>
+				<td class="subtotal">35.60</td>
+				<td class="operation"><span class="delete">删除</span></td>
+			</tr>
+			<tr>
+				<td class="checkbox"><input type="checkbox" class="check-one check" /></td>
+				<td class="goods"><img src="../images/ShoppingCartDemo/haoliyou.jpg" alt="" /><span>【天猫超市】好丽友派巧克力味涂饰蛋类芯饼30枚/盒新老交替</span></td>
+				<td class="price">35.80</td>
+				<td class="count"><span class="reduce"></span><input type="text" value="1" class="count-input" /><span class="add">+</span></td>
+				<td class="subtotal"></td>
+				<td class="operation"><span class="delete">删除</span></td>
+			</tr>
+			<tr>
+				<td class="checkbox"><input type="checkbox" class="check-one check" /></td>
+				<td class="goods"><img src="../images/ShoppingCartDemo/xiaoyuzai.jpg" alt="" /><span>湖南特产麻辣零食小吃劲仔小鱼仔香辣小鱼干300g*2盒毛毛鱼即食鱼</span></td>
+				<td class="price">39.80</td>
+				<td class="count"><span class="reduce"></span><input type="text" value="1" class="count-input" /><span class="add">+</span></td>
+				<td class="subtotal"></td>
+				<td class="operation"><span class="delete">删除</span></td>
+			</tr>
+			<tr>
+				<td class="checkbox"><input type="checkbox" class="check-one check" /></td>
+				<td class="goods"><img src="../images/ShoppingCartDemo/zhuroubu.jpg" alt="" /><span>旺良品铺子靖江猪肉脯 特产零食小吃猪肉干肉脯猪肉铺原味休闲食品</span></td>
+				<td class="price">17.90</td>
+				<td class="count"><span class="reduce"></span><input type="text" value="1" class="count-input" /><span class="add">+</span></td>
+				<td class="subtotal"></td>
+				<td class="operation"><span class="delete">删除</span></td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="foot container" id="foot">
+		<label class="fl select-all"><input type="checkbox" class="check-all check">全选</label>
+		<a href="javascript:void(0);" class="fl delete" id="deleteAll">删除</a>
+		<div class="fr closing">结算</div>
+		<div class="fr total">合计：￥<span id="priceTotal">0.00</span></div>
+		<div class="fr selected" id="selected">已选商品<span id="selectedTotal">0</span>件<span class="arrow up">▲</span><span class="arrow down">▼</span></div>
+		<div class="selected-view">
+			<div id="selectedViewList">
+			</div>
+			<span class="arrow">◆<span>◆</span></span>
+		</div>
+	</div>
+    <a href="../index.html" class="btn btn-default">点击返回主页查看其它demo</a>
+</body>
+</html>
