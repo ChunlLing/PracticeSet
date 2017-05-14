@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <title>正方体</title>
+    <style>
+        #cube {
+            width: 100%;
+            height: 320px;
+            perspective: 800px;
+            perspective-origin: 50% 50%;
+        }
+        #box {
+            position: relative;
+            top: 25%;
+            margin: auto;
+            width: 200px;
+            height: 200px;
+        	transform-style: preserve-3d;
+            transform-origin: center;
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        }
+        .square {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: .5;
+
+            line-height: 100px;
+            text-align: center;
+            font-size: 24px;
+        }
+        #front {
+            background-color: #1cc;
+        }
+        #back {
+            transform: translateZ(-100px);
+            background-color: #c1c;
+        }
+        #left {
+        	transform-origin: left;
+            transform: rotateY(90deg);
+            background-color: #cc1;
+        }
+        #right {
+        	transform-origin: right;
+            transform: rotateY(-90deg);
+            background-color: #11c;
+        }
+        #top {
+        	transform-origin: top;
+            transform: rotateX(-90deg);
+            background-color: #1c1;
+        }
+        #bottom {
+        	transform-origin: bottom;
+            transform: rotateX(90deg);
+            background-color: #c11;
+        }
+        .range-control {
+            width: 100%;
+        }
+    </style>
+    <script type="text/javascript">
+        function rotate() {
+            var x = document.querySelector('#rotatex').value;
+            var y = document.querySelector('#rotatey').value;
+            var z = document.querySelector('#rotatez').value;
+
+            document.querySelector('#box').style.transform = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg)';
+
+            document.querySelector('#span-x').innerText = x;
+            document.querySelector('#span-y').innerText = y;
+            document.querySelector('#span-z').innerText = z;
+        }
+
+        var timer;
+
+        function autoSport() {
+            var step = 0;
+            // console.log(document.querySelector('#box'));
+            timer = setInterval(function () {
+                document.querySelector('#box').style.transform = 'rotateX(' + step + 'deg) rotateY(' + step + 'deg) rotateZ(' + step + 'deg)';
+                step++;
+                if (step == 360 || step == -360) {
+                    step = 0;
+                }
+            }, 20);
+        }
+
+        function stopSport() {
+            clearInterval(timer);
+        }
+    </script>
+</head>
+<body>
+    <div id="cube">
+	    <div id="box">
+	        <div id="front" class="square">front</div>
+	        <div id="back" class="square">back</div>
+	        <div id="left" class="square">left</div>
+	        <div id="right" class="square">right</div>
+	        <div id="top" class="square">top</div>
+	        <div id="bottom" class="square">bottom</div>
+	    </div>
+    </div>
+
+    <div id="operation">
+        <p>rotate x: <span id="span-x">0</span> deg</p>
+        <input type="range" min="-360" max="360" id="rotatex" value="0" class="range-control" onchange="rotate()" />
+        <br />
+        <p>rotate y: <span id="span-y">0</span> deg</p>
+        <input type="range" min="-360" max="360" id="rotatey" value="0" class="range-control" onchange="rotate()" />
+        <br />
+        <p>rotate z: <span id="span-z">0</span> deg</p>
+        <input type="range" min="-360" max="360" id="rotatez" value="0" class="range-control" onchange="rotate()" />
+        <br />
+    </div>
+
+    <div>
+        <button type="button" onclick="autoSport()">autoSport</button>
+        <button type="button" onclick="stopSport()">stopSport</button>
+    </div>
+</body>
+</html>
